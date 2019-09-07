@@ -3,39 +3,39 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
-  mode : 'production',
-  devtool : 'source-map',
-  entry : {
-    app : './src/app.js',
+  mode: 'production',
+  devtool: 'source-map',
+  entry: {
+    app: './src/app.js',
   },
-  stats : {
-    colors : true,
+  stats: {
+    colors: true,
   },
-  plugins : [
+  plugins: [
     new CleanWebpackPlugin(),
   ],
-  optimization : {
-    minimizer : [ new UglifyJsPlugin() ],
+  optimization: {
+    minimizer: [new UglifyJsPlugin()],
   },
-  output : {
-    filename : '[name].bundle.js',
-    path : path.resolve(__dirname, 'dist'),
+  output: {
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist'),
   },
-  module : {
-    rules : [
+  module: {
+    rules: [
       {
-        test : /\.m?js$/,
-        exclude : /(node_modules|bower_components)/,
-        use : {
-          loader : 'babel-loader',
-          options : {presets : [ '@babel/preset-env' ]}
-        }
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {presets: ['@babel/preset-env']},
+        },
       },
       {
-        parser : {
-          amd : false,
+        parser: {
+          amd: false,
         },
-      }
+      },
     ],
   },
 };

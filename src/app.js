@@ -5,15 +5,15 @@
  * Date: 2019-09-06
  */
 
-const company = require('company');
-const investment = require('investment');
-const news = require('news');
+// const company = require('company');
+// const investment = require('investment');
+// const news = require('news');
 
+// TODO(xinixao): Implement service stub logic.
 const api = {
-  createServiceInstance : (type) => {
-    // TODO(xinixao): Implement service stub logic.
+  createServiceInstance: (type) => {
     return null;
-  }
+  },
 };
 
 module.exports = api;
