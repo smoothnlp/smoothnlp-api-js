@@ -1,13 +1,13 @@
 {
   "name": "@smoothnlp/smoothnlp-api",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "SmoothNLP data sharing SDK.",
   "main": "src/app.js",
   "scripts": {
     "test": "echo 'no test'",
     "build": "webpack",
     "lint": "eslint --ignore-path .eslintignore .",
-    "deploy": "npm publish --access public"
+    "deploy": "npm run build && npm publish --access public"
   },
   "repository": {
     "type": "git",
