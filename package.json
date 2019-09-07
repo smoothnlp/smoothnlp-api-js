@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo 'no test'",
     "build": "webpack",
-    "lint": "eslint --ignore-path .eslintignore ."
+    "lint": "eslint --ignore-path .eslintignore .",
+    "deploy": "npm publish --access public"
   },
   "repository": {
     "type": "git",
