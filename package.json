@@ -1,6 +1,6 @@
 {
   "name": "@smoothnlp/smoothnlp-api",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "SmoothNLP data sharing SDK.",
   "main": "src/app.js",
   "scripts": {
