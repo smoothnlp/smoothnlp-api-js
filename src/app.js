@@ -5,9 +5,9 @@
  * Date: 2019-09-06
  */
 
-const company = require('company');
-const investment = require('investment');
-const news = require('news');
+const company = require('../lib/company');
+const investment = require('../lib/investment');
+const news = require('../lib/news');
 
 const CONFIG = {};
 

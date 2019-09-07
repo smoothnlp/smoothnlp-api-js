@@ -1,6 +1,6 @@
 {
   "name": "@smoothnlp/smoothnlp-api",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "SmoothNLP data sharing SDK.",
   "main": "src/app.js",
   "scripts": {
@@ -44,9 +44,10 @@
     "webpack": "^4.39.3",
     "webpack-cli": "^3.3.8"
   },
+  "browser": {
+    "fs": false
+  },
   "dependencies": {
-    "company": "file:lib/company.tar.gz",
-    "investment": "file:lib/investment.tar.gz",
-    "news": "file:lib/news.tar.gz"
+    "superagent": "^5.1.0"
   }
 }
