@@ -9,11 +9,32 @@ const company = require('../lib/company');
 const investment = require('../lib/investment');
 const news = require('../lib/news');
 
-const CONFIG = {};
+const CONFIG = {
+  isValid: () => {
+    return !!CONFIG.OAuthToken;
+  },
+};
+
+const configureAuthenticationHeader = (client, auth) => {
+  client.apiClient.authentications = {
+    type: 'oauth2',
+    accessToken: CONFIG.OAuthToken,
+  };
+  return client;
+};
+
+const _configBuilder = {
+  setAuth: (OAuthToken) => {
+    CONFIG.OAuthToken = OAuthToken;
+    return _configBuilder;
+  },
+};
 
 const API = {
+  config: _configBuilder,
+
   createServiceInstance: (type) => {
-    if (!CONFIG.AUTH) {
+    if (!CONFIG.isValid()) {
       return undefined;
     }
 
@@ -21,22 +42,18 @@ const API = {
     switch (type) {
       case 'company':
         client = new company.CompanyApi();
+        break;
       case 'investment':
         client = new investment.InvestmentApi();
+        break;
       case 'news':
         client = new news.NewsApi();
+        break;
       default:
         return undefined;
     }
 
-    client.apiClient.authentications = CONFIG.AUTH;
-    return client;
-  },
-
-  config: {
-    setAuth: (auth) => {
-      CONFIG.AUTH = auth;
-    },
+    return configureAuthenticationHeader(client, CONFIG.AUTH);
   },
 };
 
