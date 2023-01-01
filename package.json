@@ -41,8 +41,8 @@
     "eslint-config-google": "^0.14.0",
     "path": "^0.12.7",
     "uglifyjs-webpack-plugin": "^2.2.0",
-    "webpack": "^4.39.3",
-    "webpack-cli": "^3.3.8"
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
   },
   "browser": {
     "fs": false
